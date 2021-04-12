@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>DayNineNews</title>
+	<style>
+		.title {
+			display: grid;
+			place-items: center;
+      font-family: cursive;
+		}
+
+		.orderby {
+			text-align: center;
+      font-family: cursive;
+		}
+
+		.info {
+			display: grid;
+			text-align: left;
+			margin: auto;
+			padding-left: 50px;
+			grid-auto-rows: minmax(20px, auto);
+			gap: 10px;
+			width: 70%;
+		}
+	</style>
+	<link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet">
+	</link>
+</head>
+
+<body>
+	<h1 class='title'>Reddit Reader</h1>
+	<h4 class='orderby'>A server to aggregate all your favorite subreddits</h4>
+
+	<form class='info' method="get" action="read">
+		select sub reddits you're interested on: {% for data in datas %}
+		<li>
+			<input type="checkbox" name={{data}} value="on" unchecked>{{data}}
+      </li>
+    
+    {% endfor %}
+    <p><input type="submit" value="Agrregate" style="color:white; background: black"></p>
+  </form>
+</body>
+
+</html>

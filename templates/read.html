@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet">
+	</link>
+	<style>
+		.title {
+			display: grid;
+			place-items: center;
+			color: black;
+      font-family: cursive;
+		}
+
+		.orderby {
+			text-align: center;
+      font-family: cursive;
+		}
+
+		.info {
+			display: grid;
+			padding-left: 100px;
+			grid-auto-rows: minmax(100px, auto);
+			gap: 20px;
+      font-family: Geogia;
+		}
+
+		.center {
+			width: 90%;
+			text-align: left;
+			border-bottom: 2px solid purple;
+      font-size: medium;
+		}
+
+		.small {
+			font-size: small;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 class='title' ><a href="/" style="color:black;">Reddit Reader</a></h1>
+	<h4 class='orderby'>
+		<strong>Reading: {{reading}}</strong>
+	</h4>
+	<div class='info'>
+		{%for data in datas%}
+      <div class='center'>
+        <strong>
+          <a href="{{data[3]}}" target="_blank">{{data[1]}}</a>
+          <br>
+          <p class='small'>{{data[2]}} votes from {{data[0]}}</p>
+        </strong>
+      </div> 
+    {%endfor%}
+    
+  </div>
+</body>
+
+</html>
